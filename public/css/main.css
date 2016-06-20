@@ -2,8 +2,17 @@ body{
   padding-top: 70px;
 }
 
-
 #timer{
   font-size: 300px;
   padding-left: 55px;
+}
+
+#start{
+  height: 130px;
+  width: 330px;
+}
+
+#break{
+  width: 250px;
+  height: 70px;
 }

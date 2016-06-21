@@ -6,14 +6,24 @@ $(document).ready(function(){
   var breakBtn = $('#break');
 
   start.on('click', startCountdown);
+  breakBtn.on('click', takeABreak);
+
+  function takeABreak(){
+    minutes.text('05');
+    seconds.text('00');
+    startCountdown();
+  }
 
   function startCountdown(){
-    setInterval(function(){
+      var countdown = setInterval(function(){
       var secondsVal = +seconds.text(); //the plus sign makes this behave like a number
       var minutesVal = +minutes.text();
       if(secondsVal === 0 && minutesVal === 0){
         breakBtn.removeClass('disabled');
         breakBtn.removeAttr('disabled');
+        clearInterval(countdown);
+        return;
+
       }
       if(secondsVal === 0){
         minutes.text(minutesVal -1);
@@ -30,9 +40,7 @@ $(document).ready(function(){
     }, 1000);
   }
 
-  $("#break").click(function(){
-    alert("Message");
-  });
+
 
 
 });

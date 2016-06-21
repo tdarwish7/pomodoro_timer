@@ -29,4 +29,10 @@ $(document).ready(function(){
 
     }, 1000);
   }
+
+  $("#break").click(function(){
+    alert("Message");
+  });
+
+
 });
